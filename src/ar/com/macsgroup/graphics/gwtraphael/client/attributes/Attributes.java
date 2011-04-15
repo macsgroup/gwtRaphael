@@ -46,6 +46,8 @@ public class Attributes {
 	/**
 	 * <b>Colour or gradient</b>
 	 * <ul>
+	 *   <li>linear gradient: "&lt;angle&gt;-&lt;colour&gt;[-&lt;colour&gt;[:&lt;offset&gt;]]*-&lt;colour&gt;", example: "90-#fff-#000" – 90° gradient from white to black or "0-#fff-#f00:20-#000" – 0° gradient from white via red (at 20%) to black</li>
+	 *   <li>radial gradient: "r[(&lt;fx&gt;, &lt;fy&gt;)]&lt;colour&gt;[-&lt;colour&gt;[:&lt;offset&gt;]]*-&lt;colour&gt;", example: "r#fff-#000" – gradient from white to black or "r(0.25, 0.75)#fff-#000" – gradient from white to black with focus point at 0.25, 0.75</li>
      *   <li>Focus point coordinates are in 0..1 range</li>
 	 *   <li>Radial gradients can only be applied to circles and ellipses</li>
 	 * </ul>
@@ -90,15 +92,18 @@ public class Attributes {
 	public static final StringAttributeAnimated STROKE = new StringAttributeAnimated("stroke"); 
 	
 	/**
+	 *  ["", "-", ".", "-.", "-..", ". ", "- ", "--", "- .", "--.", "--.."]
 	 */
 	public static final StringAttribute STROKE_DASHARRAY = new StringAttribute("stroke-dasharray");
 	
 
 	/**
+	 *  ["butt", "square", "round"]
 	 */
 	public static final StringAttribute STROKE_LINECAP = new StringAttribute("stroke-linecap");
 	
 	/**
+	 *  ["bevel", "round", "miter"]
 	 */
 	public static final StringAttribute STROKE_LINEJOIN = new StringAttribute("stroke-linejoin");
 
@@ -112,6 +117,7 @@ public class Attributes {
 	public static final StringAttribute TARGET = new StringAttribute("target");
 
 	/**
+	 * ["start", "middle", "end"], default is "middle"
 	 */
 	public static final StringAttribute TEXT_ANCHOR = new StringAttribute("text-anchor");
 
